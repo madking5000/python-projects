@@ -1,53 +1,38 @@
 def calculator():
     while True:
-#print options for the user 
-        print("Enter '+'  to add two numbers")
-        print("Enter '-' to substract two numbers")
-        print("Enter '*' to Multiply two numbers")
-        print("enter '/' to divide two numbers")
-        print("enter 'quit' to end the program")
+        print("Enter '+'  to add Numbers")
+        print("Enter '-'  to substract Numbers")
+        print("Enter '*'  to multiply Numbers")
+        print("Enter '/'  to divide Numbers")
 
-    
-#get user input 
         user_input = input(": ")
 
-#check if the user wants to quit
-        if user_input == "Quit":
-          break
+        if user_input == "quit": 
+            break
+
+        elif user_input in ["+", "/", "*", "-"]:
+            num1 = float(input("enter a number : "))
+            num2 = float(input("enter the second number"))
+
         
-#check if the user input is valid operator 
+            if user_input == "+":
+                result = num1 + num2 
+                print(num1, "+", num2, "=", result)
+            
+            elif user_input == "/":
+                result = num1 / num2
+                print(num1, "/", num2, "=", result)
 
-        elif user_input in ["+", "-", "*", "/"]:
-    #get the first number 
-          num1 = float(input("enter the a number : "))
+            elif user_input == "*":
+                result = num1 * num2
+                print(num1, "*", num2, "=", result)
 
-    #get the second number 
+            elif user_input == "-":
+                result = num1 - num2 
+                print(num1, "-", num2, "=", result)
 
-          num2 = float(input("Enter another number: "))
-
-
-    #perfom  the operation based on the user input
-
-        if user_input == "+":
-            result = num1 + num2
-            print(num1, "+", num2, "=", result)
-
-        elif user_input == "-":
-            result = num1 - num2
-            print(num1, "-", num2, "=", result)
-
-        elif user_input == "*":
-            result = num1 * num2 
-            print(num1, "*", num2, "=", result)
-    
-        elif user_input == "*":
-             result = num1 / num2
-             print(num1, "/", num2, "=", result)
-    
-
-        else:
-    # incase of invalid output 
-            print("Invalid output")
+            else:
+                print("Invalid input")
 
 
 
